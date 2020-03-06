@@ -1,11 +1,37 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let digimon of digimones">
-        <div class="card">
-            <div class="card-body text-center">
-                <p><img class=" img-fluid" src="{{digimon.img}}" alt="card image"></p>
-                <h4 class="card-title">{{digimon.name}}</h4>
-                <p class="card-text">{{digimon.level}}</p>
-            </div>
-        </div>
+<mat-toolbar>
+    <img src="../../../assets/img/Digimon_Logo.svg">
+
+    <div class="search-box">
+        <input matInput class="search-input" type="text" id="search" (keyup)="filtrar()" placeholder="Ingrese nombre o id" />
+    </div>
+
+    <div>
+        <mat-label>Nivel</mat-label>
+        <mat-form-field>
+            <mat-select (selectionChange)="seleccionaNivel($event.value)">
+                <mat-option value="0">Todos
+                </mat-option>
+                <mat-option *ngFor="let nivel of niveles" [value]="nivel">
+                    {{ nivel }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</mat-toolbar>
+
+<div class="grid-layout">
+    <div *ngFor="let digimon of digimones">
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>{{digimon.name}}</mat-card-title>
+                <mat-card-subtitle>id:{{digimon.id}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <img src="{{digimon.img}}">
+                <div>
+                    Level : {{digimon.level}}
+                </div>
+            </mat-card-content>
+        </mat-card>
     </div>
 </div>

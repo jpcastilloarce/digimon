@@ -1,0 +1,29 @@
+mat-toolbar img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+mat-label {
+    margin-right: 10px;
+}
+
+.search-box {
+    margin-right: 30px;
+}
+
+.search-input {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 50px;
+    padding: 2px 5px 2px 20px;
+    width: 270px;
+    border-radius: 50px;
+    border: none;
+    outline: none !important;
+    background: white;
+    height: 40px;
+}
+
+.close-button {
+    margin-left: -35px;
+}
